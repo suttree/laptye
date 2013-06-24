@@ -11,12 +11,22 @@ require 'open-uri'
 #       previous_job_id int
 #       );
 
+
+# TODO
+# check for duplicate job titles
+# allow for ajax auto-complete of job titles
+# map the connections between roles (past and present)
+# use porter stemming to group similar job titles
+# put this all into a wikee and start making
+
 i = 0
 url = 'http://uk.linkedin.com/in/peterhgough'
 client = Mysql2::Client.new(:host => 'localhost', :username => 'root', :database => 'laptye')
 
 begin
   i += 1
+
+  exit "No url left to spider" if url.nil?
 
   doc = Nokogiri::HTML(open(url))
   next_job_id = nil
@@ -29,6 +39,7 @@ begin
     title = current.text.strip.split(/\n/).first
     puts title
 
+    puts "INSERT INTO jobs (title) VALUES ('#{title}')"
     client.query("INSERT INTO jobs (title) VALUES ('#{title}')")
     result = client.query("SELECT LAST_INSERT_ID() AS next_id;")
     next_job_id = result.first['next_id']
@@ -42,6 +53,7 @@ begin
     title = past.text.strip.split(/\n/).first
     #puts title
 
+    puts "INSERT INTO jobs (title, next_job_id) VALUES ('#{title}', #{next_job_id})"
     client.query("INSERT INTO jobs (title, next_job_id) VALUES ('#{title}', #{next_job_id})")
 
     result = client.query("SELECT LAST_INSERT_ID() AS next_id;")
