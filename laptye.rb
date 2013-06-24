@@ -14,6 +14,7 @@ require 'open-uri'
 
 # TODO
 # check for duplicate job titles
+# re-arch jobs needs a habtm relationship
 # map the connections between roles (past and present)
 # put this all into a wikee and start making
 #   use porter stemming to group similar job titles
