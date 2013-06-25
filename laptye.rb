@@ -19,7 +19,8 @@ require 'open-uri'
 # put this all into a wikee and start making
 #   use porter stemming to group similar job titles
 #   allow for ajax auto-complete of job titles
-# make this a ruby app
+# make this a ruby4.0 app
+# - https://devcenter.heroku.com/articles/rails4-getting-started
 
 i = 0
 url = 'http://uk.linkedin.com/in/peterhgough'
