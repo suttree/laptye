@@ -21,6 +21,16 @@ require 'open-uri'
 #   allow for ajax auto-complete of job titles
 # make this a ruby4.0 app
 # - https://devcenter.heroku.com/articles/rails4-getting-started
+#
+# gems and use bootstrap for UI
+# https://github.com/charliesome/better_errors
+# https://github.com/carrierwaveuploader/carrierwave
+# https://github.com/aasm/aasm
+# https://github.com/nickpad/will_paginate-bootstrap
+# https://github.com/gregbell/active_admin
+# http://railscasts.com/episodes/328-twitter-bootstrap-basics
+
+# use https://github.com/madebymany/allele
 
 i = 0
 url = 'http://uk.linkedin.com/in/peterhgough'
