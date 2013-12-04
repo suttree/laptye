@@ -13,6 +13,16 @@ require 'open-uri'
 
 
 # TODO
+#
+#
+#
+# Use https://github.com/yatish27/linkedin-scraper
+#
+#
+#
+#
+#
+#
 # check for duplicate job titles
 # re-arch jobs needs a habtm relationship
 # map the connections between roles (past and present)
@@ -21,6 +31,7 @@ require 'open-uri'
 #   allow for ajax auto-complete of job titles
 # make this a ruby4.0 app
 # - https://devcenter.heroku.com/articles/rails4-getting-started
+# ask people what they wanted when they took/applied for the job
 #
 # gems and use bootstrap for UI
 # https://github.com/charliesome/better_errors
